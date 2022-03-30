@@ -1,6 +1,6 @@
 import readlineSync from 'readline-sync';
 
-export const welcomeStart = () => {
+const welcomeStart = () => {
   console.log('Welcome to the Brain Games!');
   const askName = () => readlineSync.question('May I have your name?: ');
   const nameObj = askName();
@@ -36,3 +36,4 @@ export const welcomeStart = () => {
 //     }
 //     return result;
 // }
+export default welcomeStart;
