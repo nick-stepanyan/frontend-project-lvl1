@@ -30,7 +30,7 @@ const primeFunk = () => {
             }
             return trueAnswer;
         };
-        while (step !== 39) {
+        while (step !== 3) {
             const x = getRandomInt(100);
             const number = x; // number generating
             Prime(number);
