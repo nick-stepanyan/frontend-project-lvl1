@@ -1,3 +1,8 @@
-import readlineSync from 'readline-sync';
+import welcomeStart from '../index.js';
 
-export default () => readlineSync.question('May I have your name?: ');
+const cliFunk = () => {
+  const name = welcomeStart();
+  console.log(`Hello, ${name}!`);
+};
+
+export default cliFunk;

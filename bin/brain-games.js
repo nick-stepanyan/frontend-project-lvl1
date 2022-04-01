@@ -1,5 +1,5 @@
 #!/usr/bin/env node
 
-import welcomeStart from '../src/index.js';
+import cliFunk from '../src/games/cli.js';
 
-console.log(welcomeStart());
+cliFunk();
