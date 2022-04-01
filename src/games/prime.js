@@ -4,7 +4,7 @@ import welcomeStart from '../index.js';
 const primeFunk = () => {
     const name = welcomeStart();
     console.log(`Hello, ${name}!`);
-    console.log('Answer "yes" if the number is even, otherwise answer "no".');
+    console.log('Answer "yes" if given number is prime. Otherwise answer "no".');
 
     const mainLogig = () => {
         // const name = askName();
@@ -30,7 +30,7 @@ const primeFunk = () => {
             }
             return trueAnswer;
         };
-        while (step !== 3) {
+        while (step !== 39) {
             const x = getRandomInt(100);
             const number = x; // number generating
             Prime(number);
