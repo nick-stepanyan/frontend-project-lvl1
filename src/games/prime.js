@@ -40,7 +40,7 @@ const primeFunk = () => {
             if (answer === trueAnswer) {
                 console.log('Correct!');
             } else if (answer !== trueAnswer) {
-                result = (`${answer} is wrong answer ;(. Correct answer was ${trueAnswer}. Lets try again, ${name}!`);
+                result = (`${answer} is wrong answer ;(. Correct answer was ${trueAnswer}. Let's try again, ${name}!`);
                 break;
             }
         }
