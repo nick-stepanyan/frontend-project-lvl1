@@ -2,5 +2,4 @@
 [![Actions Status](https://github.com/nick-stepanyan/frontend-project-lvl1/workflows/hexlet-check/badge.svg)](https://github.com/nick-stepanyan/frontend-project-lvl1/actions)
 [![Maintainability](https://api.codeclimate.com/v1/badges/a99a88d28ad37a79dbf6/maintainability)](https://codeclimate.com/github/codeclimate/codeclimate/maintainability)
 [![Test Coverage](https://api.codeclimate.com/v1/badges/a99a88d28ad37a79dbf6/test_coverage)](https://codeclimate.com/github/codeclimate/codeclimate/test_coverage)
-![example workflow](https://github.com/Anna-Gisma/backend-project-lvl1/actions/workflows/nodejs.yaml/badge.svg)
-![Ascinema] (https://asciinema.org/a/HhwdNt2mIz1pHtdAAn1DTFbPs)
+[![asciicast](https://asciinema.org/a/QAKqpPEHKa0qsqU8URECjPU1g.svg)](https://asciinema.org/a/QAKqpPEHKa0qsqU8URECjPU1g)
