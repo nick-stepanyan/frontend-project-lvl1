@@ -11,7 +11,7 @@ const primeFunk = () => {
     let step = 0; // number of rounds
     let result = `Congratulations, ${name}!`;
     let trueAnswer;
-    const getRandomInt = (max) => Math.floor((Math.random() * max) + 1);
+    const getRandomInt = (max) => Math.floor((Math.random() * max) + 2);
 
     const Prime = (x) => {
       let i = 0;
