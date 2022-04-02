@@ -1,6 +1,6 @@
 import readlineSync from 'readline-sync';
 import startOfGreetingsGames from '../index.js';
-import getRandomInt from '../../utils/utils.js';
+import getRandomInt from '../utils.js';
 
 const givenNumberIsPrime = () => {
   const name = startOfGreetingsGames();

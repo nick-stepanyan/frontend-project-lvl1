@@ -1,8 +1,8 @@
 import readlineSync from 'readline-sync';
 import startOfGreetingsGames from '../index.js';
-import getRandomInt from '../../utils/utils.js';
+import getRandomInt from '../utils.js';
 
-const startGameOfCalc = () => {
+const runGameOfCalc = () => {
   const name = startOfGreetingsGames();
   console.log(`Hello, ${name}!`);
   console.log('What is the result of the expression?');
@@ -47,4 +47,4 @@ const startGameOfCalc = () => {
   console.log(mainLogig());
 };
 
-export default startGameOfCalc;
+export default runGameOfCalc;

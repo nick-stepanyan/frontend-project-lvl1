@@ -1,48 +1,36 @@
 {
     "name": "@hexlet/code",
     "version": "1.0.0",
-    "description": "My first project of Hexlet",
-    "main": "index.js",
-    "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1"
-    },
-    "author": "nick",
-    "license": "ISC",
     "type": "module",
+    "description": "[![Actions Status](https://github.com/nick-stepanyan/frontend-project-lvl1/workflows/hexlet-check/badge.svg)](https://github.com/nick-stepanyan/frontend-project-lvl1/actions) [![Maintainability](https://api.codeclimate.com/v1/badges/d1a8236e5c6d725b2e5d/maintainability)](https://codeclimate.com/github/nick-stepanyan/frontend-project-lvl1/maintainability) ![example workflow](https://github.com/nick-stepanyan/frontend-project-lvl1/actions/workflows/.github/workflows/nodejs.yml/badge.svg) [![asciicast](https://asciinema.org/a/QAKqpPEHKa0qsqU8URECjPU1g.svg)](https://asciinema.org/a/QAKqpPEHKa0qsqU8URECjPU1g) [![asciicast](https://asciinema.org/a/HhwdNt2mIz1pHtdAAn1DTFbPs.svg)](https://asciinema.org/a/HhwdNt2mIz1pHtdAAn1DTFbPs) [![asciicast](https://asciinema.org/a/IAVmKATFEqeshEMpFVA1lqhQY.svg)](https://asciinema.org/a/IAVmKATFEqeshEMpFVA1lqhQY) [![asciicast](https://asciinema.org/a/z3jpLXxRwPJ9vp5GYVIS8fEpt.svg)](https://asciinema.org/a/z3jpLXxRwPJ9vp5GYVIS8fEpt) [![asciicast](https://asciinema.org/a/aWKJMgcs1yi8tFjNOAPSjfCEH.svg)](https://asciinema.org/a/aWKJMgcs1yi8tFjNOAPSjfCEH)",
+    "main": "index.js",
     "bin": {
+        "brain-calc": "bin/brain-calc.js",
         "brain-even": "bin/brain-even.js",
         "brain-games": "bin/brain-games.js",
-        "brain-calc": "bin/brain-calc.js",
         "brain-gcd": "bin/brain-gcd.js",
-        "brain-progression": "bin/brain-progression.js",
-        "brain-prime": "bin/brain-prime.js"
-
+        "brain-prime": "bin/brain-prime.js",
+        "brain-progression": "bin/brain-progression.js"
     },
-    "dependencies": {
-        "eslint": "^8.12.0",
-        "eslint-config-airbnb-base": "^15.0.0",
-        "eslint-plugin-import": "^2.25.4",
-        "readline-sync": "^1.4.10"
-    },
-
-    "devDependencies": {
-        "@jest/globals": "^27.5.1",
-        "eslint": "^8.10.0",
-        "eslint-config-airbnb-base": "^15.0.0",
-        "eslint-plugin-import": "^2.25.4",
-        "eslint-plugin-jest": "^26.1.1",
-        "jest": "^27.5.1",
-        "jest-cli": "^27.5.1",
-        "npm-check-updates": "^12.5.2",
-        "simple-git-hooks": "^2.7.0"
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
     },
     "repository": {
         "type": "git",
         "url": "git+https://github.com/nick-stepanyan/frontend-project-lvl1.git"
     },
+    "author": "nick",
+    "license": "ISC",
     "bugs": {
         "url": "https://github.com/nick-stepanyan/frontend-project-lvl1/issues"
     },
-
-    "homepage": "https://github.com/nick-stepanyan/frontend-project-lvl1#readme"
+    "homepage": "https://github.com/nick-stepanyan/frontend-project-lvl1#readme",
+    "dependencies": {
+        "readline-sync": "^1.4.10"
+    },
+    "devDependencies": {
+        "eslint": "^8.12.0",
+        "eslint-config-airbnb-base": "^15.0.0",
+        "eslint-plugin-import": "^2.25.4"
+    }
 }
