@@ -1,5 +1,5 @@
 #!/usr/bin/env node
 
-import gcdFunc from '../src/games/gcd.js';
+import findTheGreatestCommonDivisor from '../src/games/gcd.js';
 
-gcdFunc();
+findTheGreatestCommonDivisor();

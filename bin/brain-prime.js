@@ -1,5 +1,5 @@
 #!/usr/bin/env node
 
-import primeFunk from '../src/games/prime.js';
+import givenNumberIsPrime from '../src/games/prime.js';
 
-primeFunk();
+givenNumberIsPrime();

@@ -1,5 +1,5 @@
 #!/usr/bin/env node
 
-import progressionFunk from '../src/games/progression.js';
+import missingNumberTheProgression from '../src/games/progression.js';
 
-progressionFunk();
+missingNumberTheProgression();
