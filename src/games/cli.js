@@ -1,8 +1,8 @@
-import welcomeStart from '../index.js';
+import start_of_greetings_games from '../index.js';
 
-const cliFunk = () => {
-  const name = welcomeStart();
-  console.log(`Hello, ${name}!`);
+const start_askName_greeting = () => {
+    const name = start_of_greetings_games();
+    console.log(`Hello, ${name}!`);
 };
 
-export default cliFunk;
+export default start_askName_greeting;
