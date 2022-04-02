@@ -16,17 +16,18 @@ const startGameOfEvenNumber = () => {
         if ((number % 2 === 0 && answer === 'yes') || (number % 2 !== 0 && answer === 'no')) {
             console.log('Correct!');
         } else if (answer === 'yes') {
-            result = `yes' is wrong answer ;(. Correct answer was 'no'. Let's try again, ${name}!`;
+            console.log(`yes' is wrong answer ;(. Correct answer was 'no'. Let's try again, ${name}!`);
             break;
         } else if (answer === 'no') {
-            result = `'no' is wrong answer ;(. Correct answer was 'yes'. Let's try again, ${name}!`;
+            console.log(`'no' is wrong answer ;(. Correct answer was 'yes'. Let's try again, ${name}!`);
             break;
         } else {
-            result = `It is a wrong answer, try again, ${name}!`;
+            console.log(`It is a wrong answer, try again, ${name}!`);
             break;
         }
+        console.log(`Congratulations, ${name}!`);
     }
-    console.log(`Congratulations, ${name}!`);
+
 };
 
 

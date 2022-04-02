@@ -37,12 +37,13 @@ const missingNumberTheProgression = () => {
         if (answer === trueAnswer) {
             console.log('Correct!');
         } else {
-            result = (`${answer} is wrong answer ;(. Correct answer was ${trueAnswer}.  Let's try again, ${name}!`);
+            console.log(`${answer} is wrong answer ;(. Correct answer was ${trueAnswer}.  Let's try again, ${name}!`);
             break;
         }
+        console.log(`Congratulations, ${name}!`);
     }
 
-    console.log(`Congratulations, ${name}!`);
+
 };
 
 export default missingNumberTheProgression;

@@ -27,9 +27,7 @@ const Prime = (x) => {
 };
 
 const givenNumberIsPrime = () => {
-
     while (step !== 3) {
-
         const number = getRandomInt(100);
         Prime(number);
         console.log(`Question: ${number}`);
@@ -38,11 +36,12 @@ const givenNumberIsPrime = () => {
         if (answer === trueAnswer) {
             console.log('Correct!');
         } else if (answer !== trueAnswer) {
-            result = (`${answer} is wrong answer ;(. Correct answer was ${trueAnswer}. Let's try again, ${name}!`);
+            console.log(`${answer} is wrong answer ;(. Correct answer was ${trueAnswer}. Let's try again, ${name}!`);
             break;
         }
+        console.log(`Congratulations, ${name}!`);
     }
-    console.log(`Congratulations, ${name}!`);
+
 };
 
 
