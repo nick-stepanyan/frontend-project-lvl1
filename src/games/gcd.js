@@ -5,26 +5,23 @@ import getRandomInt from '../utils.js';
 const name = startOfGreetingsGames();
 console.log(`Hello, ${name}!`);
 console.log('Find the greatest common divisor of given numbers.');
-let steps = 0;
+
 const Divisor = (x, y) => {
-  let b;
-  while (x !== y) {
-    if (x > y) {
-      b = x - y;
-    } else { b = y - x; }
-  }
-  return b;
+  if (y > x) return Divisor(y, x);
+  if (!y) return x;
+  return Divisor(y, x % y);
 };
 
+let steps = 0;
 const findTheGreatestCommonDivisor = () => {
-  while (steps !== 23) {
+  while (steps !== 3) {
     const number = getRandomInt(30);
     const number2 = getRandomInt(30);
-    let trueAnswer;
-    Divisor(number, number2);
-    trueAnswer = Divisor(number, number2);
-    trueAnswer = String(trueAnswer);
     console.log(`Question: ${number} ${number2}`);
+    let trueAnswer;
+    trueAnswer = Divisor(number, number2);
+    console.log(trueAnswer);
+    trueAnswer = String(trueAnswer);
     const answer = readlineSync.question('Your answer: ');
     steps += 1;
     if (answer === trueAnswer) {
