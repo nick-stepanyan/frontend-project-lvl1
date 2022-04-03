@@ -18,16 +18,15 @@ const findTheGreatestCommonDivisor = () => {
     const number = getRandomInt(30);
     const number2 = getRandomInt(30);
     console.log(`Question: ${number} ${number2}`);
-    let trueAnswer;
-    trueAnswer = Divisor(number, number2);
-    console.log(trueAnswer);
-    trueAnswer = String(trueAnswer);
+    let trueAns;
+    trueAns = Divisor(number, number2);
+    trueAns = String(trueAns);
     const answer = readlineSync.question('Your answer: ');
     steps += 1;
-    if (answer === trueAnswer) {
+    if (answer === trueAns) {
       console.log('Correct!');
     } else {
-      return console.log(`${answer} is wrong answer ;(. Correct answer was ${trueAnswer}.  Let's try again, ${name}!`);
+      return console.log(`${answer} is wrong answer ;(. Correct answer was ${trueAns}.  Let's try again, ${name}!`);
     }
   }
   return console.log(`Congratulations, ${name}!`);
