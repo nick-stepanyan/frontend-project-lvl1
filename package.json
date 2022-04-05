@@ -3,7 +3,6 @@
     "version": "1.0.0",
     "type": "module",
     "description": "First project by Hexlet",
-    "main": "index.js",
     "bin": {
         "brain-calc": "bin/brain-calc.js",
         "brain-even": "bin/brain-even.js",
