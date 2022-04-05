@@ -13,9 +13,9 @@ const runOfGreetingsGames = (rule) => {
 export const resultComplain = (array, name) => {
   let i = 0;
   while (i < step) {
-    console.log(`Question: ${array[0, i][1]}`);
+    console.log(`Question: ${array[i][1]}`);
     const answer = readlineSync.question('Your answer: ');
-    const trueAnswer = array[0, i][0];
+    const trueAnswer = array[i][0];
     i += 1;
     if (answer === trueAnswer) {
       console.log('Correct!');

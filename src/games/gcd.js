@@ -23,6 +23,7 @@ const runTheGreatestCommonDivisor = () => {
     taskArray.push([trueAnswer, questionVariant]);
     step += 1;
   }
+
   return taskArray;
 };
 
