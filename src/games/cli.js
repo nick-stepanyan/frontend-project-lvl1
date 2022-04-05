@@ -1,8 +1,8 @@
-import startOfGreetingsGames from '../index.js';
+import runOfGreetingsGames from '../index.js';
 
-const startAskNameGreeting = () => {
-  const name = startOfGreetingsGames();
-  console.log(`Hello, ${name}!`);
+const runAskNameGreeting = () => {
+    const name = runOfGreetingsGames();
+    console.log(`Hello, ${name}!`);
 };
 
-export default startAskNameGreeting;
+export default runAskNameGreeting;

@@ -1,5 +1,5 @@
 #!/usr/bin/env node
 
-import startGameOfEvenNumber from '../src/games/cli-even.js';
+import runGameOfEvenNumber from '../src/games/cli-even.js';
 
-startGameOfEvenNumber();
+runGameOfEvenNumber();

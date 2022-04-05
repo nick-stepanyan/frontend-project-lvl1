@@ -1,35 +1,35 @@
-import readlineSync from 'readline-sync';
-import startOfGreetingsGames from '../index.js';
-import getRandomInt from '../utils.js';
+import runOfGreetingsGames from '../index.js';
+import getRandom from '../utils.js';
+import { resultComplain } from '../index.js';
 
-const name = startOfGreetingsGames();
-console.log(`Hello, ${name}!`);
-console.log('Find the greatest common divisor of given numbers.');
 
-const Divisor = (x, y) => {
-  if (y > x) return Divisor(y, x);
-  if (!y) return x;
-  return Divisor(y, x % y);
+const rule = ('Find the greatest common divisor of given numbers.');
+let name = runOfGreetingsGames(rule);
+
+const divisor = (x, y) => {
+    if (y > x) return divisor(y, x);
+    if (!y) return x;
+    return divisor(y, x % y);
 };
 
-let steps = 0;
-const findTheGreatestCommonDivisor = () => {
-  while (steps !== 3) {
-    const number = getRandomInt(30);
-    const number2 = getRandomInt(30);
-    console.log(`Question: ${number} ${number2}`);
-    let trueAns;
-    trueAns = Divisor(number, number2);
-    trueAns = String(trueAns);
-    const answer = readlineSync.question('Your answer: ');
-    steps += 1;
-    if (answer === trueAns) {
-      console.log('Correct!');
-    } else {
-      return console.log(`${answer} is wrong answer ;(. Correct answer was ${trueAns}.  Let's try again, ${name}!`);
+
+const runTheGreatestCommonDivisor = () => {
+    const taskArray = [];
+    let steps = 0;
+    while (steps !== 3) {
+
+        const number = getRandom(2, 30);
+        const number2 = getRandom(2, 30);
+        const questionVariant = `${number} ${number2}`;
+        let trueAnswer;
+        trueAnswer = divisor(number, number2);
+        trueAnswer = String(trueAnswer);
+        taskArray.push([trueAnswer, questionVariant])
+        steps += 1;
     }
-  }
-  return console.log(`Congratulations, ${name}!`);
+    return taskArray;
 };
 
-export default findTheGreatestCommonDivisor;
+resultComplain(runTheGreatestCommonDivisor(), name);
+
+export default runTheGreatestCommonDivisor;
