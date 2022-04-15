@@ -10,18 +10,13 @@
 
 Clone the repository or use `make install` command
 
-
 ## Usage example
-
 
 **Calculator**
 
 Calculate the result of the expression.
 
 Use `make brain-calc` command to start
-
-
-Use make brain-calc command to start
 [![asciicast](https://asciinema.org/a/QAKqpPEHKa0qsqU8URECjPU1g.svg)](https://asciinema.org/a/QAKqpPEHKa0qsqU8URECjPU1g)
 [![asciicast](https://asciinema.org/a/HhwdNt2mIz1pHtdAAn1DTFbPs.svg)](https://asciinema.org/a/HhwdNt2mIz1pHtdAAn1DTFbPs)
 [![asciicast](https://asciinema.org/a/IAVmKATFEqeshEMpFVA1lqhQY.svg)](https://asciinema.org/a/IAVmKATFEqeshEMpFVA1lqhQY)
