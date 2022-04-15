@@ -17,6 +17,7 @@ Clone the repository or use `make install` command
 Calculate the result of the expression.
 
 Use `make brain-calc` command to start
+
 [![asciicast](https://asciinema.org/a/QAKqpPEHKa0qsqU8URECjPU1g.svg)](https://asciinema.org/a/QAKqpPEHKa0qsqU8URECjPU1g)
 
 **Parity**
