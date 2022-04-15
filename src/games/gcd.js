@@ -1,8 +1,7 @@
-import runOfGreetingsGames, { showMainBlock } from '../index.js';
-import getRandom from '../utils.js';
+import runEngine from '../index.js';
+import getRandomNumber from '../utils.js';
 
-const rule = ('Find the greatest common divisor of given numbers.');
-const name = runOfGreetingsGames(rule);
+const description = 'Find the greatest common divisor of given numbers.';
 
 const getCommonDivisor = (x, y) => {
   if (y > x) return getCommonDivisor(y, x);
@@ -12,21 +11,16 @@ const getCommonDivisor = (x, y) => {
 
 const runTheGreatestCommonDivisor = () => {
   const taskArray = [];
-  let step = 0;
-  while (step !== 3) {
-    const number = getRandom(2, 30);
-    const number2 = getRandom(2, 30);
+  for (let i = 0; i < 3; i += 1) {
+    const number = getRandomNumber(2, 30);
+    const number2 = getRandomNumber(2, 30);
     const questionVariant = `${number} ${number2}`;
     let trueAnswer;
     trueAnswer = getCommonDivisor(number, number2);
     trueAnswer = String(trueAnswer);
     taskArray.push([trueAnswer, questionVariant]);
-    step += 1;
   }
-
-  return taskArray;
+  runEngine(taskArray, description);
 };
-
-showMainBlock(runTheGreatestCommonDivisor(), name);
 
 export default runTheGreatestCommonDivisor;

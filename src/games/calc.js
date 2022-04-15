@@ -1,45 +1,38 @@
-import runOfGreetingsGames, { showMainBlock } from '../index.js';
-import getRandom from '../utils.js';
+import runEngine from '../index.js';
+import getRandomNumber from '../utils.js';
 
-const rule = ('What is the result of the expression?');
-const name = runOfGreetingsGames(rule);
+const description = 'What is the result of the expression?';
 
 const switchRandomOperation = (number, number2, symbolOperand) => {
   let trueAnswer;
-  let operatorLogic2;
   switch (symbolOperand) {
-    case 2:
+    case '*':
       trueAnswer = number * number2;
-      operatorLogic2 = '*';
       break;
-    case 3:
+    case '-':
       trueAnswer = number - number2;
-      operatorLogic2 = '-';
       break;
     default:
       trueAnswer = number + number2;
-      operatorLogic2 = '+';
-      break;
   }
-  return { trueAnswer, operatorLogic2 };
+  return trueAnswer;
 };
 
 const runGameOfCalc = () => {
   const taskArray = [];
-  let step = 0;
-  while (step !== 3) {
-    const number = getRandom(0, 20);
-    const number2 = getRandom(0, 10);
-    const symbolOperand = getRandom(2, 5);
-    const doubleFocus = switchRandomOperation(number, number2, symbolOperand);
-    doubleFocus.trueAnswer = String(doubleFocus.trueAnswer);
-    const questionVariant = `${number} ${doubleFocus.operatorLogic2} ${number2}`;
-    taskArray.push([doubleFocus.trueAnswer, questionVariant]);
-    step += 1;
+  for (let i = 0; i < 3; i += 1) {
+    const number = getRandomNumber(0, 20);
+    const number2 = getRandomNumber(0, 10);
+    const operators = ['+', '-', '*'];
+    const randomIndex = getRandomNumber(0, operators.length - 1);
+    const randomOperator = operators[randomIndex];
+    let trueAnswer = switchRandomOperation(number, number2, randomOperator);
+    trueAnswer = String(trueAnswer);
+    const questionVariant = `${number} ${randomOperator} ${number2}`;
+    taskArray.push([trueAnswer, questionVariant]);
   }
-  return taskArray;
-};
 
-showMainBlock(runGameOfCalc(), name);
+  runEngine(taskArray, description);
+};
 
 export default runGameOfCalc;

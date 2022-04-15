@@ -1,5 +1,5 @@
 #!/usr/bin/env node
 
-import runAskNameGreeting from '../src/games/cli.js';
+import runGreeting from '../src/cli.js';
 
-runAskNameGreeting();
+runGreeting();

@@ -1,41 +1,33 @@
-import runOfGreetingsGames, { showMainBlock } from '../index.js';
-import getRandom from '../utils.js';
+import runEngine from '../index.js';
+import getRandomNumber from '../utils.js';
 
-const rule = ('What number is missing in the progression?');
-const name = runOfGreetingsGames(rule);
+const description = 'What number is missing in the progression?';
 
-let step = 0;
-let trueAnswer;
-const arr = [];
-
-const generateProgression = (clear) => {
-  arr.length = clear;
-  const startNumber = getRandom(2, 20);
-  const stepOfProgression = getRandom(2, 7);
+const generateProgression = () => {
+  const arrOfProgression = [];
+  const startNumber = getRandomNumber(2, 20);
+  const stepOfProgression = getRandomNumber(2, 7);
   let stepCount = startNumber;
-  arr.push(startNumber);
+  arrOfProgression.push(startNumber);
   for (let i = 0; i < 10; i += 1) {
     stepCount += stepOfProgression;
-    arr.push(stepCount);
+    arrOfProgression.push(stepCount);
   }
-  const indexArr = Math.floor(Math.random() * 10);
-  trueAnswer = arr[indexArr];
-  arr[indexArr] = '..';
-
-  return arr.join(' ');
+  return arrOfProgression;
 };
 
 const runMissingNumberTheProgression = () => {
   const taskArray = [];
-  while (step !== 3) {
-    generateProgression(0);
+  for (let i = 0; i < 3; i += 1) {
+    const arrOfProgression = generateProgression();
+    const indexArr = Math.floor(Math.random() * 10);
+    let trueAnswer = arrOfProgression[indexArr];
+    arrOfProgression[indexArr] = '..';
     trueAnswer = String(trueAnswer);
-    const questionVariant = `${arr.join(' ')}`;
+    const questionVariant = `${arrOfProgression.join(' ')}`;
     taskArray.push([trueAnswer, questionVariant]);
-    step += 1;
   }
-  return taskArray;
+  runEngine(taskArray, description);
 };
 
-showMainBlock(runMissingNumberTheProgression(), name);
 export default runMissingNumberTheProgression;

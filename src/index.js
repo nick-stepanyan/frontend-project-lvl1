@@ -1,16 +1,12 @@
 import readlineSync from 'readline-sync';
 
-const step = 3;
-
-const runOfGreetingsGames = (rule) => {
+const runEngine = (items, description) => {
   console.log('Welcome to the Brain Games!');
   const name = readlineSync.question('May I have your name?: ');
   console.log(`Hello, ${name}!`);
-  console.log(rule);
-  return name;
-};
+  console.log(description);
 
-export const showMainBlock = (items, name) => {
+  const step = 3;
   let i = 0;
   while (i < step) {
     console.log(`Question: ${items[i][1]}`);
@@ -20,10 +16,10 @@ export const showMainBlock = (items, name) => {
     if (answer === trueAnswer) {
       console.log('Correct!');
     } else {
-      return console.log(`${answer} is wrong answer ;(. Correct answer was ${trueAnswer}.  Let's try again, ${name}!`);
+      return console.log(`${answer} is wrong answer ;(. Correct answer was ${trueAnswer}. Let's try again, ${name}!`);
     }
   }
   return console.log(`Congratulations, ${name}!`);
 };
 
-export default runOfGreetingsGames;
+export default runEngine;

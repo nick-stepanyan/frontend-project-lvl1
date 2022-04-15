@@ -1,8 +1,7 @@
-import runOfGreetingsGames, { showMainBlock } from '../index.js';
-import getRandom from '../utils.js';
+import runEngine from '../index.js';
+import getRandomNumber from '../utils.js';
 
-const rule = ('Answer "yes" if given number is prime. Otherwise answer "no".');
-const name = runOfGreetingsGames(rule);
+const description = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
 let trueAnswer;
 const getPrimeTrueAnswer = (x) => {
@@ -24,17 +23,14 @@ const getPrimeTrueAnswer = (x) => {
 };
 
 const runGivenNumberIsPrime = () => {
-  let step = 0;
   const taskArray = [];
-  while (step !== 3) {
-    const number = getRandom(2, 100);
+  for (let i = 0; i < 3; i += 1) {
+    const number = getRandomNumber(2, 100);
     trueAnswer = getPrimeTrueAnswer(number);
     const questionVariant = `${number}`;
     taskArray.push([trueAnswer, questionVariant]);
-    step += 1;
   }
-  return taskArray;
+  runEngine(taskArray, description);
 };
 
-showMainBlock(runGivenNumberIsPrime(), name);
 export default runGivenNumberIsPrime;
