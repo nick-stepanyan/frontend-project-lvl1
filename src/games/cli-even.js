@@ -3,21 +3,21 @@ import getRandomNumber from '../utils.js';
 
 const description = 'Answer "yes" if the number is even, otherwise answer "no".';
 
-const getEvenNumber = (number) => number % 2 === 0;
+const isEvenNumber = (number) => number % 2 === 0;
 
 const runGameOfEvenNumber = () => {
-  const taskArray = [];
-  for (let i = 0; i < 3; i += 1) {
-    const number = getRandomNumber(2, 100);
-    const questionVariant = `${number}`;
-    let trueAnswer;
-    if (getEvenNumber(number) === true) {
-      trueAnswer = 'yes';
-    } else trueAnswer = 'no';
+    const taskArray = [];
+    for (let i = 0; i < 3; i += 1) {
+        const number = getRandomNumber(2, 100);
+        const questionVariant = `${number}`;
+        let trueAnswer;
+        if (isEvenNumber(number) === true) {
+            trueAnswer = 'yes';
+        } else trueAnswer = 'no';
 
-    taskArray.push([trueAnswer, questionVariant]);
-  }
-  runEngine(taskArray, description);
+        taskArray.push([trueAnswer, questionVariant]);
+    }
+    runEngine(taskArray, description);
 };
 
 export default runGameOfEvenNumber;
