@@ -1,4 +1,4 @@
-import runEngine from '../index.js';
+import runEngine, { numRounds } from '../index.js';
 import getRandomNumber from '../utils.js';
 
 const description = 'Answer "yes" if given number is prime. Otherwise answer "no".';
@@ -14,18 +14,16 @@ const isPrime = (x) => {
   }
   if (b < 3) {
     return true;
-  } return false;
+  }
+  return false;
 };
 
 const runGivenNumberIsPrime = () => {
   const taskArray = [];
-  for (let i = 0; i < 3; i += 1) {
+  for (let i = 0; i < numRounds; i += 1) {
     const number = getRandomNumber(2, 100);
-    let trueAnswer;
-    if (isPrime(number) === true) {
-      trueAnswer = 'yes';
-    } else trueAnswer = 'no';
-    const questionVariant = `${number}`;
+    const trueAnswer = isPrime(number) ? 'yes' : 'no';
+    const questionVariant = String(number);
     taskArray.push([trueAnswer, questionVariant]);
   }
   runEngine(taskArray, description);

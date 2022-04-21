@@ -1,37 +1,33 @@
-import runEngine from '../index.js';
+import runEngine, { numRounds } from '../index.js';
 import getRandomNumber from '../utils.js';
 
 const description = 'What is the result of the expression?';
 
-const switchRandomOperation = (number, number2, symbolOperand) => {
-  let trueAnswer;
+const calculate = (number, number2, symbolOperand) => {
   switch (symbolOperand) {
     case '*':
-      trueAnswer = number * number2;
-      break;
+      return number * number2;
     case '-':
-      trueAnswer = number - number2;
-      break;
+      return number - number2;
+    case '+':
+      return number + number2;
     default:
-      trueAnswer = number + number2;
+      throw new Error(`Unknown operation symbol: '${symbolOperand}'!`);
   }
-  return trueAnswer;
 };
 
 const runGameOfCalc = () => {
   const taskArray = [];
-  for (let i = 0; i < 3; i += 1) {
+  for (let i = 0; i < numRounds; i += 1) {
     const number = getRandomNumber(0, 20);
     const number2 = getRandomNumber(0, 10);
     const operators = ['+', '-', '*'];
     const randomIndex = getRandomNumber(0, operators.length - 1);
     const randomOperator = operators[randomIndex];
-    let trueAnswer = switchRandomOperation(number, number2, randomOperator);
-    trueAnswer = String(trueAnswer);
+    const trueAnswer = calculate(number, number2, randomOperator);
     const questionVariant = `${number} ${randomOperator} ${number2}`;
-    taskArray.push([trueAnswer, questionVariant]);
+    taskArray.push([String(trueAnswer), questionVariant]);
   }
-
   runEngine(taskArray, description);
 };
 

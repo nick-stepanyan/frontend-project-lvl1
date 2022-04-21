@@ -1,31 +1,31 @@
-import runEngine from '../index.js';
+import runEngine, { numRounds } from '../index.js';
 import getRandomNumber from '../utils.js';
 
 const description = 'What number is missing in the progression?';
 
-const generateProgression = () => {
-  const arrOfProgression = [];
+const generateProgression = (minLengthProgression) => {
+  const arr = [];
   const startNumber = getRandomNumber(2, 20);
   const stepOfProgression = getRandomNumber(2, 7);
   let stepCount = startNumber;
-  arrOfProgression.push(startNumber);
-  for (let i = 0; i < 10; i += 1) {
+  arr.push(startNumber);
+  const lengthProgression = minLengthProgression + getRandomNumber(5, 6);
+  for (let i = 0; i < lengthProgression; i += 1) {
     stepCount += stepOfProgression;
-    arrOfProgression.push(stepCount);
+    arr.push(stepCount);
   }
-  return arrOfProgression;
+  return arr;
 };
 
 const runMissingNumberTheProgression = () => {
   const taskArray = [];
-  for (let i = 0; i < 3; i += 1) {
-    const arrOfProgression = generateProgression();
-    const indexArr = Math.floor(Math.random() * 10);
-    let trueAnswer = arrOfProgression[indexArr];
-    arrOfProgression[indexArr] = '..';
-    trueAnswer = String(trueAnswer);
-    const questionVariant = `${arrOfProgression.join(' ')}`;
-    taskArray.push([trueAnswer, questionVariant]);
+  for (let i = 0; i < numRounds; i += 1) {
+    const hideIndex = getRandomNumber(0, 14);
+    const arr = generateProgression(hideIndex);
+    const trueAnswer = arr[hideIndex];
+    arr[hideIndex] = '..';
+    const questionVariant = `${arr.join(' ')}`;
+    taskArray.push([String(trueAnswer), questionVariant]);
   }
   runEngine(taskArray, description);
 };
