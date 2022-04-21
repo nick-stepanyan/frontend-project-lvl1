@@ -1,6 +1,6 @@
 import readlineSync from 'readline-sync';
 
-export const numberRounds = 3;
+export const numberRounds = 30;
 
 const runEngine = (items, description) => {
   console.log('Welcome to the Brain Games!');
