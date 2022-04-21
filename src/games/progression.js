@@ -1,33 +1,33 @@
-import runEngine, { numRounds } from '../index.js';
+import runEngine, { numberRounds } from '../index.js';
 import getRandomNumber from '../utils.js';
 
 const description = 'What number is missing in the progression?';
 
-const generateProgression = (minLengthProgression) => {
-  const arr = [];
-  const startNumber = getRandomNumber(2, 20);
-  const stepOfProgression = getRandomNumber(2, 7);
-  let stepCount = startNumber;
-  arr.push(startNumber);
-  const lengthProgression = minLengthProgression + getRandomNumber(5, 6);
+const getProgression = (lengthProgression, startNumberProgression, stepProgression) => {
+  const progression = [];
+  let stepCount = startNumberProgression;
+  progression.push(startNumberProgression);
   for (let i = 0; i < lengthProgression; i += 1) {
-    stepCount += stepOfProgression;
-    arr.push(stepCount);
+    stepCount += stepProgression;
+    progression.push(stepCount);
   }
-  return arr;
+  return progression;
 };
 
 const runMissingNumberTheProgression = () => {
-  const taskArray = [];
-  for (let i = 0; i < numRounds; i += 1) {
-    const hideIndex = getRandomNumber(0, 14);
-    const arr = generateProgression(hideIndex);
-    const trueAnswer = arr[hideIndex];
-    arr[hideIndex] = '..';
-    const questionVariant = `${arr.join(' ')}`;
-    taskArray.push([String(trueAnswer), questionVariant]);
+  const rounds = [];
+  for (let i = 0; i < numberRounds; i += 1) {
+    const startNumberProgression = getRandomNumber(2, 20);
+    const stepProgression = getRandomNumber(2, 5);
+    const hiddenIndex = getRandomNumber(0, 14);
+    const lengthProgression = hiddenIndex + stepProgression;
+    const progression = getProgression(lengthProgression, startNumberProgression, stepProgression);
+    const trueAnswer = progression[hiddenIndex];
+    progression[hiddenIndex] = '..';
+    const questionVariant = `${progression.join(' ')}`;
+    rounds.push([String(trueAnswer), questionVariant]);
   }
-  runEngine(taskArray, description);
+  runEngine(rounds, description);
 };
 
 export default runMissingNumberTheProgression;

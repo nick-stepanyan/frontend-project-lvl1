@@ -1,4 +1,4 @@
-import runEngine, { numRounds } from '../index.js';
+import runEngine, { numberRounds } from '../index.js';
 import getRandomNumber from '../utils.js';
 
 const description = 'What is the result of the expression?';
@@ -17,8 +17,8 @@ const calculate = (number, number2, symbolOperand) => {
 };
 
 const runGameOfCalc = () => {
-  const taskArray = [];
-  for (let i = 0; i < numRounds; i += 1) {
+  const rounds = [];
+  for (let i = 0; i < numberRounds; i += 1) {
     const number = getRandomNumber(0, 20);
     const number2 = getRandomNumber(0, 10);
     const operators = ['+', '-', '*'];
@@ -26,9 +26,9 @@ const runGameOfCalc = () => {
     const randomOperator = operators[randomIndex];
     const trueAnswer = calculate(number, number2, randomOperator);
     const questionVariant = `${number} ${randomOperator} ${number2}`;
-    taskArray.push([String(trueAnswer), questionVariant]);
+    rounds.push([String(trueAnswer), questionVariant]);
   }
-  runEngine(taskArray, description);
+  runEngine(rounds, description);
 };
 
 export default runGameOfCalc;
