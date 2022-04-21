@@ -3,19 +3,17 @@ import getRandomNumber from '../utils.js';
 
 const description = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
-const isPrime = (x) => {
-  let i = 0;
-  let b = 0;
-  while (i !== x) {
-    i += 1;
-    if (x % i === 0) {
-      b += 1;
+const isPrime = (n) => {
+  if (n < 2) {
+    return false;
+  }
+  const k = Math.sqrt(n);
+  for (let i = 2; i <= k; i += 1) {
+    if (n % i === 0) {
+      return false;
     }
   }
-  if (b < 3) {
-    return true;
-  }
-  return false;
+  return true;
 };
 
 const runGivenNumberIsPrime = () => {
