@@ -1,4 +1,4 @@
-import runEngine, { numberRounds } from '../index.js';
+import runEngine, { roundsCount } from '../index.js';
 import getRandomNumber from '../utils.js';
 
 const description = 'Find the greatest common divisor of given numbers.';
@@ -11,12 +11,12 @@ const getCommonDivisor = (x, y) => {
 
 const runTheGreatestCommonDivisor = () => {
   const rounds = [];
-  for (let i = 0; i < numberRounds; i += 1) {
+  for (let i = 0; i < roundsCount; i += 1) {
     const number = getRandomNumber(2, 30);
     const number2 = getRandomNumber(2, 30);
     const questionVariant = `${number} ${number2}`;
-    const trueAnswer = getCommonDivisor(number, number2);
-    rounds.push([String(trueAnswer), questionVariant]);
+    const correctAnswer = getCommonDivisor(number, number2);
+    rounds.push([String(correctAnswer), questionVariant]);
   }
   runEngine(rounds, description);
 };
